@@ -1,0 +1,14 @@
+<div
+    style="border: 5px solid; margin: auto; width: 50%; padding: 10px"
+    *ngIf="peli.nombre"
+    class="card center"
+    style=" padding-left: 45%;"
+  >
+    <img src="{{ peli.imagen }}" class="card-img-center" alt="..." />
+    <div  class="card-body">
+      <h2 class="card-title ">{{ peli.nombre }}</h2>
+      <p class="card-text">{{ peli.descripcion }}</p>
+      
+    </div>
+    <button class="btn btn-warning" routerLinkActive="isActive" routerLink="/">Regresar</button>
+  </div>

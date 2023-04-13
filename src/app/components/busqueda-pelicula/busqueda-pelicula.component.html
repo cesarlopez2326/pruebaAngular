@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CUEVANA</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          placeholder="Search"
+          aria-label="Nombre de la Pelicula"
+          style="margin-bottom: 1%"
+          name="nombre"
+          #nombre="ngModel"
+          [(ngModel)]="search.nombre"
+        />
+        <input
+          class="form-control me-2"
+          type="number"
+          placeholder="Año"
+          aria-label="Search"
+          style="margin-bottom: 1%"
+          name="year"
+          #year="ngModel"
+          [(ngModel)]="search.year"
+        />
+        <button
+          class="btn btn-outline-success"
+          type="submit"
+          (click)="buscarPelicula()"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    style="border: 5px solid; margin: auto; width: 50%; padding: 10px"
+    *ngIf="pelicula.nombre"
+    class="card center"
+    style="width: 18rem; padding-top: 5%; padding-left: 45%;"
+  >
+    <img src="{{ pelicula.imagen }}" class="card-img-center" alt="..." />
+    <div style=" text-align: center" class="card-body">
+      <h2 class="card-title text-center">{{ pelicula.nombre }}</h2>
+      <p class="card-text">{{ pelicula.descripcion }}</p>
+      <button class="btn btn-success" (click)="redirect()">Mas Información</button>
+    </div>
+  </div>
+</nav>
