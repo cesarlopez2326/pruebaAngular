@@ -1,14 +1,37 @@
-<div
-    style="border: 5px solid; margin: auto; width: 50%; padding: 10px"
-    *ngIf="peli.nombre"
-    class="card center"
-    style=" padding-left: 45%;"
-  >
-    <img src="{{ peli.imagen }}" class="card-img-center" alt="..." />
-    <div  class="card-body">
-      <h2 class="card-title ">{{ peli.nombre }}</h2>
-      <p class="card-text">{{ peli.descripcion }}</p>
-      
+<head>
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+    padding-bottom: 10px;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Mas Información</h2>
+  
+  <div class="card">
+    <img src="{{ peli.imagen }}" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h3>{{ peli.nombre }}</h3>
+      <p class="card-text">{{ peli.descripcion }}</p> 
+      <button class="btn btn-warning" routerLinkActive="isActive" routerLink="/">Regresar</button>
     </div>
-    <button class="btn btn-warning" routerLinkActive="isActive" routerLink="/">Regresar</button>
+    
   </div>
+  
+  </body>
+  
+
+
+  
